@@ -9,7 +9,7 @@
 <link rel="stylesheet" type="text/css" href="https://apps.bdimg.com/libs/bootstrap/3.3.4/css/bootstrap.css">
 <!-- jQuery文件。务必在bootstrap.min.js 之前引入 --> 
 <script src="js/jquery.min.js"></script>
-<!-- 最新的 Bootstrap 核心 JavaScript 文件 --> 
+<!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
 <script src="js/bootstrap.min.js"></script>
 <!--echarts JS-->
 <script src="js/echarts.min.js"></script>
@@ -21,6 +21,8 @@
 <script src="js/china.js"></script>
 <script src="js/chartMap.js"></script>
 <link rel="stylesheet" type="text/css" href="css/visual.css">
+	<link rel="stylesheet" href="map/lib/leaflet/leaflet.css">
+	<script src="map/lib/leaflet/leaflet-src.js"></script>
 
 </head>
 <body class="ksh">
@@ -32,7 +34,7 @@
 	</div>
 	<div class="head_top">
 		<img class="img-responsive" src="images/jcdsj_logo.png">
-		
+
 	</div>
 	<div class="visual">
 		<div class="visual_left">
@@ -42,7 +44,7 @@
 					<img src="images/ksh33.png">
 				</div>
 				<div class="visual_chart" id="main1">
-					
+
 				</div>
 			</div>
 			<div class="visual_box">
@@ -51,7 +53,7 @@
 					<img src="images/ksh33.png">
 				</div>
 				<div class="visual_chart" id="main2">
-					
+
 				</div>
 			</div>
 			<div class="visual_box">
@@ -119,7 +121,7 @@
 							<div class="clear"></div>
 						</div>
 					</div>
-					
+
 				</div>
 			</div>
 		</div>
@@ -176,7 +178,7 @@
 					<h1>上海市</h1>
 					<h2>碳数据平台</h2>
 				</div>
-				<div class="visual_chart" id="main8"></div>
+				<div class="visual_chart" id="map"></div>
 				<div class="visual_conBot_bot">
 					<div class="visualSssf_left">
 						<h3>今日实时碳排放</h3>
@@ -219,7 +221,7 @@
 					<img src="images/ksh33.png">
 				</div>
 				<div class="visual_chart" id="main9">
-					
+
 				</div>
 				<div class="visual_table">
 						<table>
@@ -328,11 +330,33 @@
     var myChart7 = echarts.init(document.getElementById('main7'));
     myChart7.setOption(option7);
     //中间地图
-	var myChart8 = echarts.init(document.getElementById('main8'));
-    myChart8.setOption(option8);
+	// var myChart8 = echarts.init(document.getElementById('main8'));
+    // myChart8.setOption(option8);
     //收费站收费量
 	var myChart9 = echarts.init(document.getElementById('main9'));
     myChart9.setOption(option9);
+	</script>
+	<script>
+		let map = L.map('map',{
+			minZoom: 0,
+			maxZoom: 20,
+			center: [31.23,121.47],
+			zoom: 15,
+			zoomDelta: 0.5,
+			fullscreenControl: false,
+			zoomControl: false,
+			attributionControl: false
+		});
+		let gaodeSatelliteMapUrl = 'http://webst0{s}.is.autonavi.com/appmaptile?style=6&x={x}&y={y}&z={z}';
+		let gaode = 'http://webrd0{s}.is.autonavi.com/appmaptile?lang=zh_cn&size=1&scale=1&style=8&x={x}&y={y}&z={z}';
+		let baseLayer=L.tileLayer(gaodeSatelliteMapUrl,{
+			attribution: '&copy; 高德地图',
+			maxZoom: 20,
+			minZoom: 0,
+			subdomains: "1234"
+		});
+
+		map.addLayer(baseLayer);
 	</script>
 </body>
 </html>

@@ -790,16 +790,16 @@ option4 = {
 function random() {
     return +(Math.random() * (maxData - 10)).toFixed(1);
 }
-setInterval(function () {
-    var dynamicData = [random(), random(), random(), random(),random(), random(), random(), random(),random(),random()];
-    myChart.setOption({
-        series: [{
-            data: dynamicData.slice()
-        }, {
-            data: dynamicData.slice()
-        }]
-    })
-}, 3000)
+// setInterval(function () {
+//     var dynamicData = [random(), random(), random(), random(),random(), random(), random(), random(),random(),random()];
+//     myChart.setOption({
+//         series: [{
+//             data: dynamicData.slice()
+//         }, {
+//             data: dynamicData.slice()
+//         }]
+//     })
+// }, 3000)
 //////////////////////收费站收费排行2 end
 
 //收费站收费排行2
@@ -936,16 +936,16 @@ option41 = {
 function random() {
     return +(Math.random() * (maxData - 10)).toFixed(1);
 }
-setInterval(function () {
-    var dynamicData = [random(), random(), random(), random(),random(), random(), random(), random(),random(),random()];
-    myChart.setOption({
-        series: [{
-            data: dynamicData.slice()
-        }, {
-            data: dynamicData.slice()
-        }]
-    })
-}, 3000)
+// setInterval(function () {
+//     var dynamicData = [random(), random(), random(), random(),random(), random(), random(), random(),random(),random()];
+//     myChart.setOption({
+//         series: [{
+//             data: dynamicData.slice()
+//         }, {
+//             data: dynamicData.slice()
+//         }]
+//     })
+// }, 3000)
 //////////////////////收费站收费排行2 end
 
 //今日实时收费

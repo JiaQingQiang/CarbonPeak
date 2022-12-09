@@ -1,0 +1,20 @@
+body{
+    background: url("../img/bg.jpg") 0 0 / 100% 100% no-repeat;
+    display: flex;
+}
+html,body{
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+
+    display: flex; /**/
+    justify-content: center; /*水平居中*/
+    align-items: Center; /*垂直居中*/
+}
+#container{
+    height: 286px;
+    width: 400px;
+    border: 1px solid #2e6da4;
+    box-shadow: 0 0 10px #2e6da4;
+}
